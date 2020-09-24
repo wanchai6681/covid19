@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="https://www.unescap.org/sites/default/d8files/inline-images/COVID-19_Response.png">
+   <Covid/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import Covid from './components/Covid.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Covid,
+    
+
   }
 }
 </script>
@@ -24,5 +27,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
+ 
 }
 </style>
