@@ -5,13 +5,17 @@
   <ul/>
     <!-- {{playlist}} -->
     <div v-for="list in playlist" :key="list.trackId"></div>
-    death : {{ death }} <br>
-    active :{{ active }} <br>
-    activePerOneMillion:{{activePerOneMillion}}  <br>
+    <div>
     todayCases: {{todayCases}}  <br>
     todayDeaths: {{todayDeaths}}  <br>
     todayRecovered: {{todayRecovered}}  <br>
-    updated: {{updated}} <br>
+    death : {{ death }} <br>
+    active :{{ active }} <br>
+    activePerOneMillion:{{activePerOneMillion}}  <br>
+    cases:{{cases}}<br>
+    continent: {{continent}}<br>
+    country: {{country}}<br>
+    </div>
   </div>
 </template>
 <script>
@@ -25,7 +29,9 @@ export default {
       todayCases: '',
       todayDeaths: '',
       todayRecovered: '',
-      updated: ''
+      updated: '',
+      continent: '',
+      country: '' 
     }
   },
 
@@ -33,14 +39,15 @@ export default {
     getitem(){
       axios.get('https://corona.lmao.ninja/v2/countries/' + this.textSearch)
       .then(res => {
-
         this.death = res.data.deaths
         this.active = res.data.active
         this.activePerOneMillion=res.data.activePerOneMillion
         this.todayCases =res.data.todayCases
         this.todayDeaths=res.data.todayDeaths
         this.todayRecovered=res.data.todayRecovered
-        this.updated=res.data.updated
+        this.cases=res.data.cases
+        this.continent=res.data.continent
+        this.country=res.data.country
         console.log(res.data)
       })
       .catch(err => {
