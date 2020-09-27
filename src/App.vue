@@ -27,8 +27,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  
+  color: rgb(4, 0, 238);
   
  
+}
+body{
+  background-image: url('https://dynamic-cdn.eggdigital.com/cDkwqLPAQ.jpg');
+  background-attachment: fixed;
+
+  
 }
 </style>
